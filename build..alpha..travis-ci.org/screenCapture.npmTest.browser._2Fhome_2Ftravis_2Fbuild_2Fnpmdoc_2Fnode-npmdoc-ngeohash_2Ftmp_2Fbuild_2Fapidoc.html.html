@@ -1,0 +1,809 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/sunng87/node-geohash">ngeohash (v0.6.0)</a>
+</h1>
+<h4>geohash library for nodejs</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ngeohash">module ngeohash</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ngeohash.bboxes">
+            function <span class="apidocSignatureSpan">ngeohash.</span>bboxes
+            <span class="apidocSignatureSpan">(minLat, minLon, maxLat, maxLon, numberOfChars)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ngeohash.bboxes_int">
+            function <span class="apidocSignatureSpan">ngeohash.</span>bboxes_int
+            <span class="apidocSignatureSpan">(minLat, minLon, maxLat, maxLon, bitDepth)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ngeohash.decode">
+            function <span class="apidocSignatureSpan">ngeohash.</span>decode
+            <span class="apidocSignatureSpan">(hashString)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ngeohash.decode_bbox">
+            function <span class="apidocSignatureSpan">ngeohash.</span>decode_bbox
+            <span class="apidocSignatureSpan">(hash_string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ngeohash.decode_bbox_int">
+            function <span class="apidocSignatureSpan">ngeohash.</span>decode_bbox_int
+            <span class="apidocSignatureSpan">(hashInt, bitDepth)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ngeohash.decode_bbox_uint64">
+            function <span class="apidocSignatureSpan">ngeohash.</span>decode_bbox_uint64
+            <span class="apidocSignatureSpan">(hashInt, bitDepth)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ngeohash.decode_int">
+            function <span class="apidocSignatureSpan">ngeohash.</span>decode_int
+            <span class="apidocSignatureSpan">(hash_int, bitDepth)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ngeohash.decode_uint64">
+            function <span class="apidocSignatureSpan">ngeohash.</span>decode_uint64
+            <span class="apidocSignatureSpan">(hash_int, bitDepth)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ngeohash.encode">
+            function <span class="apidocSignatureSpan">ngeohash.</span>encode
+            <span class="apidocSignatureSpan">(latitude, longitude, numberOfChars)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ngeohash.encode_int">
+            function <span class="apidocSignatureSpan">ngeohash.</span>encode_int
+            <span class="apidocSignatureSpan">(latitude, longitude, bitDepth)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ngeohash.encode_uint64">
+            function <span class="apidocSignatureSpan">ngeohash.</span>encode_uint64
+            <span class="apidocSignatureSpan">(latitude, longitude, bitDepth)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ngeohash.neighbor">
+            function <span class="apidocSignatureSpan">ngeohash.</span>neighbor
+            <span class="apidocSignatureSpan">(hashString, direction)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ngeohash.neighbor_int">
+            function <span class="apidocSignatureSpan">ngeohash.</span>neighbor_int
+            <span class="apidocSignatureSpan">(hash_int, direction, bitDepth)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ngeohash.neighbors">
+            function <span class="apidocSignatureSpan">ngeohash.</span>neighbors
+            <span class="apidocSignatureSpan">(hash_string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ngeohash.neighbors_int">
+            function <span class="apidocSignatureSpan">ngeohash.</span>neighbors_int
+            <span class="apidocSignatureSpan">(hash_int, bitDepth)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ngeohash.</span>ENCODE_AUTO</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ngeohash" id="apidoc.module.ngeohash">module ngeohash</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ngeohash.bboxes" id="apidoc.element.ngeohash.bboxes">
+        function <span class="apidocSignatureSpan">ngeohash.</span>bboxes
+        <span class="apidocSignatureSpan">(minLat, minLon, maxLat, maxLon, numberOfChars)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bboxes = function (minLat, minLon, maxLat, maxLon, numberOfChars) {
+  numberOfChars = numberOfChars || 9;
+
+  var hashSouthWest = encode(minLat, minLon, numberOfChars);
+  var hashNorthEast = encode(maxLat, maxLon, numberOfChars);
+
+  var latLon = decode(hashSouthWest);
+
+  var perLat = latLon.error.latitude * 2;
+  var perLon = latLon.error.longitude * 2;
+
+  var boxSouthWest = decode_bbox(hashSouthWest);
+  var boxNorthEast = decode_bbox(hashNorthEast);
+
+  var latStep = Math.round((boxNorthEast[0] - boxSouthWest[0]) / perLat);
+  var lonStep = Math.round((boxNorthEast[1] - boxSouthWest[1]) / perLon);
+
+  var hashList = [];
+
+  for (var lat = 0; lat &lt;= latStep; lat++) {
+    for (var lon = 0; lon &lt;= lonStep; lon++) {
+      hashList.push(neighbor(hashSouthWest, [lat, lon]));
+    }
+  }
+
+  return hashList;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ngeohash.bboxes_int" id="apidoc.element.ngeohash.bboxes_int">
+        function <span class="apidocSignatureSpan">ngeohash.</span>bboxes_int
+        <span class="apidocSignatureSpan">(minLat, minLon, maxLat, maxLon, bitDepth)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bboxes_int = function (minLat, minLon, maxLat, maxLon, bitDepth){
+    bitDepth = bitDepth || 52;
+
+    var hashSouthWest = encode_int(minLat, minLon, bitDepth);
+    var hashNorthEast = encode_int(maxLat, maxLon, bitDepth);
+
+    var latlon = decode_int(hashSouthWest, bitDepth);
+
+    var perLat = latlon.error.latitude * 2;
+    var perLon = latlon.error.longitude * 2;
+
+    var boxSouthWest = decode_bbox_int(hashSouthWest, bitDepth);
+    var boxNorthEast = decode_bbox_int(hashNorthEast, bitDepth);
+
+    var latStep = Math.round((boxNorthEast[0] - boxSouthWest[0])/perLat);
+    var lonStep = Math.round((boxNorthEast[1] - boxSouthWest[1])/perLon);
+
+    var hashList = [];
+
+    for(var lat = 0; lat &lt;= latStep; lat++){
+        for(var lon = 0; lon &lt;= lonStep; lon++){
+            hashList.push(neighbor_int(hashSouthWest,[lat, lon], bitDepth));
+        }
+    }
+
+    return hashList;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ngeohash.decode" id="apidoc.element.ngeohash.decode">
+        function <span class="apidocSignatureSpan">ngeohash.</span>decode
+        <span class="apidocSignatureSpan">(hashString)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decode = function (hashString) {
+  var bbox = decode_bbox(hashString);
+  var lat = (bbox[0] + bbox[2]) / 2;
+  var lon = (bbox[1] + bbox[3]) / 2;
+  var latErr = bbox[2] - lat;
+  var lonErr = bbox[3] - lon;
+  return {latitude: lat, longitude: lon,
+          error: {latitude: latErr, longitude: lonErr}};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Usage
+
+```javascript
+var geohash = require('ngeohash');
+console.log(geohash.encode(37.8324, 112.5584));
+// prints ww8p1r4t8
+var latlon = geohash.<span class="apidocCodeKeywordSpan">decode</span>('ww8p1r4t8');
+console.log(latlon.latitude);
+console.log(latlon.longitude);
+```
+
+
+## Basic Methods
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ngeohash.decode_bbox" id="apidoc.element.ngeohash.decode_bbox">
+        function <span class="apidocSignatureSpan">ngeohash.</span>decode_bbox
+        <span class="apidocSignatureSpan">(hash_string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decode_bbox = function (hash_string) {
+  var isLon = true,
+  maxLat = 90,
+  minLat = -90,
+  maxLon = 180,
+  minLon = -180,
+  mid;
+
+  var hashValue = 0;
+  for (var i = 0, l = hash_string.length; i &lt; l; i++) {
+    var code = hash_string[i].toLowerCase();
+    hashValue = BASE32_CODES_DICT[code];
+
+    for (var bits = 4; bits &gt;= 0; bits--) {
+      var bit = (hashValue &gt;&gt; bits) &amp; 1;
+      if (isLon) {
+        mid = (maxLon + minLon) / 2;
+        if (bit === 1) {
+          minLon = mid;
+        } else {
+          maxLon = mid;
+        }
+      } else {
+        mid = (maxLat + minLat) / 2;
+        if (bit === 1) {
+          minLat = mid;
+        } else {
+          maxLat = mid;
+        }
+      }
+      isLon = !isLon;
+    }
+  }
+  return [minLat, minLon, maxLat, maxLon];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ngeohash.decode_bbox_int" id="apidoc.element.ngeohash.decode_bbox_int">
+        function <span class="apidocSignatureSpan">ngeohash.</span>decode_bbox_int
+        <span class="apidocSignatureSpan">(hashInt, bitDepth)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decode_bbox_int = function (hashInt, bitDepth) {
+
+  bitDepth = bitDepth || 52;
+
+  var maxLat = 90,
+  minLat = -90,
+  maxLon = 180,
+  minLon = -180;
+
+  var latBit = 0, lonBit = 0;
+  var step = bitDepth / 2;
+
+  for (var i = 0; i &lt; step; i++) {
+
+    lonBit = get_bit(hashInt, ((step - i) * 2) - 1);
+    latBit = get_bit(hashInt, ((step - i) * 2) - 2);
+
+    if (latBit === 0) {
+      maxLat = (maxLat + minLat) / 2;
+    }
+    else {
+      minLat = (maxLat + minLat) / 2;
+    }
+
+    if (lonBit === 0) {
+      maxLon = (maxLon + minLon) / 2;
+    }
+    else {
+      minLon = (maxLon + minLon) / 2;
+    }
+  }
+  return [minLat, minLon, maxLat, maxLon];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ngeohash.decode_bbox_uint64" id="apidoc.element.ngeohash.decode_bbox_uint64">
+        function <span class="apidocSignatureSpan">ngeohash.</span>decode_bbox_uint64
+        <span class="apidocSignatureSpan">(hashInt, bitDepth)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decode_bbox_uint64 = function (hashInt, bitDepth) {
+
+  bitDepth = bitDepth || 52;
+
+  var maxLat = 90,
+  minLat = -90,
+  maxLon = 180,
+  minLon = -180;
+
+  var latBit = 0, lonBit = 0;
+  var step = bitDepth / 2;
+
+  for (var i = 0; i &lt; step; i++) {
+
+    lonBit = get_bit(hashInt, ((step - i) * 2) - 1);
+    latBit = get_bit(hashInt, ((step - i) * 2) - 2);
+
+    if (latBit === 0) {
+      maxLat = (maxLat + minLat) / 2;
+    }
+    else {
+      minLat = (maxLat + minLat) / 2;
+    }
+
+    if (lonBit === 0) {
+      maxLon = (maxLon + minLon) / 2;
+    }
+    else {
+      minLon = (maxLon + minLon) / 2;
+    }
+  }
+  return [minLat, minLon, maxLat, maxLon];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ngeohash.decode_int" id="apidoc.element.ngeohash.decode_int">
+        function <span class="apidocSignatureSpan">ngeohash.</span>decode_int
+        <span class="apidocSignatureSpan">(hash_int, bitDepth)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decode_int = function (hash_int, bitDepth) {
+  var bbox = decode_bbox_int(hash_int, bitDepth);
+  var lat = (bbox[0] + bbox[2]) / 2;
+  var lon = (bbox[1] + bbox[3]) / 2;
+  var latErr = bbox[2] - lat;
+  var lonErr = bbox[3] - lon;
+  return {latitude: lat, longitude: lon,
+          error: {latitude: latErr, longitude: lonErr}};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ngeohash.decode_uint64" id="apidoc.element.ngeohash.decode_uint64">
+        function <span class="apidocSignatureSpan">ngeohash.</span>decode_uint64
+        <span class="apidocSignatureSpan">(hash_int, bitDepth)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decode_uint64 = function (hash_int, bitDepth) {
+  var bbox = decode_bbox_int(hash_int, bitDepth);
+  var lat = (bbox[0] + bbox[2]) / 2;
+  var lon = (bbox[1] + bbox[3]) / 2;
+  var latErr = bbox[2] - lat;
+  var lonErr = bbox[3] - lon;
+  return {latitude: lat, longitude: lon,
+          error: {latitude: latErr, longitude: lonErr}};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ngeohash.encode" id="apidoc.element.ngeohash.encode">
+        function <span class="apidocSignatureSpan">ngeohash.</span>encode
+        <span class="apidocSignatureSpan">(latitude, longitude, numberOfChars)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encode = function (latitude, longitude, numberOfChars) {
+  if (numberOfChars === ENCODE_AUTO) {
+    if (typeof(latitude) === 'number' || typeof(longitude) === 'number') {
+      throw new Error('string notation required for auto precision.');
+    }
+    var decSigFigsLat = latitude.split('.')[1].length;
+    var decSigFigsLong = longitude.split('.')[1].length;
+    var numberOfSigFigs = Math.max(decSigFigsLat, decSigFigsLong);
+    numberOfChars = SIGFIG_HASH_LENGTH[numberOfSigFigs];
+  } else if (numberOfChars === undefined) {
+    numberOfChars = 9;
+  }
+
+  var chars = [],
+  bits = 0,
+  bitsTotal = 0,
+  hash_value = 0,
+  maxLat = 90,
+  minLat = -90,
+  maxLon = 180,
+  minLon = -180,
+  mid;
+  while (chars.length &lt; numberOfChars) {
+    if (bitsTotal % 2 === 0) {
+      mid = (maxLon + minLon) / 2;
+      if (longitude &gt; mid) {
+        hash_value = (hash_value &lt;&lt; 1) + 1;
+        minLon = mid;
+      } else {
+        hash_value = (hash_value &lt;&lt; 1) + 0;
+        maxLon = mid;
+      }
+    } else {
+      mid = (maxLat + minLat) / 2;
+      if (latitude &gt; mid) {
+        hash_value = (hash_value &lt;&lt; 1) + 1;
+        minLat = mid;
+      } else {
+        hash_value = (hash_value &lt;&lt; 1) + 0;
+        maxLat = mid;
+      }
+    }
+
+    bits++;
+    bitsTotal++;
+    if (bits === 5) {
+      var code = BASE32_CODES[hash_value];
+      chars.push(code);
+      bits = 0;
+      hash_value = 0;
+    }
+  }
+  return chars.join('');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+
+## Usage
+
+```javascript
+var geohash = require('ngeohash');
+console.log(geohash.<span class="apidocCodeKeywordSpan">encode</span>(37.8324, 112.5584));
+// prints ww8p1r4t8
+var latlon = geohash.decode('ww8p1r4t8');
+console.log(latlon.latitude);
+console.log(latlon.longitude);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ngeohash.encode_int" id="apidoc.element.ngeohash.encode_int">
+        function <span class="apidocSignatureSpan">ngeohash.</span>encode_int
+        <span class="apidocSignatureSpan">(latitude, longitude, bitDepth)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encode_int = function (latitude, longitude, bitDepth) {
+
+  bitDepth = bitDepth || 52;
+
+  var bitsTotal = 0,
+  maxLat = 90,
+  minLat = -90,
+  maxLon = 180,
+  minLon = -180,
+  mid,
+  combinedBits = 0;
+
+  while (bitsTotal &lt; bitDepth) {
+    combinedBits *= 2;
+    if (bitsTotal % 2 === 0) {
+      mid = (maxLon + minLon) / 2;
+      if (longitude &gt; mid) {
+        combinedBits += 1;
+        minLon = mid;
+      } else {
+        maxLon = mid;
+      }
+    } else {
+      mid = (maxLat + minLat) / 2;
+      if (latitude &gt; mid) {
+        combinedBits += 1;
+        minLat = mid;
+      } else {
+        maxLat = mid;
+      }
+    }
+    bitsTotal++;
+  }
+  return combinedBits;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ngeohash.encode_uint64" id="apidoc.element.ngeohash.encode_uint64">
+        function <span class="apidocSignatureSpan">ngeohash.</span>encode_uint64
+        <span class="apidocSignatureSpan">(latitude, longitude, bitDepth)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encode_uint64 = function (latitude, longitude, bitDepth) {
+
+  bitDepth = bitDepth || 52;
+
+  var bitsTotal = 0,
+  maxLat = 90,
+  minLat = -90,
+  maxLon = 180,
+  minLon = -180,
+  mid,
+  combinedBits = 0;
+
+  while (bitsTotal &lt; bitDepth) {
+    combinedBits *= 2;
+    if (bitsTotal % 2 === 0) {
+      mid = (maxLon + minLon) / 2;
+      if (longitude &gt; mid) {
+        combinedBits += 1;
+        minLon = mid;
+      } else {
+        maxLon = mid;
+      }
+    } else {
+      mid = (maxLat + minLat) / 2;
+      if (latitude &gt; mid) {
+        combinedBits += 1;
+        minLat = mid;
+      } else {
+        maxLat = mid;
+      }
+    }
+    bitsTotal++;
+  }
+  return combinedBits;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ngeohash.neighbor" id="apidoc.element.ngeohash.neighbor">
+        function <span class="apidocSignatureSpan">ngeohash.</span>neighbor
+        <span class="apidocSignatureSpan">(hashString, direction)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">neighbor = function (hashString, direction) {
+  var lonLat = decode(hashString);
+  var neighborLat = lonLat.latitude
+    + direction[0] * lonLat.error.latitude * 2;
+  var neighborLon = lonLat.longitude
+    + direction[1] * lonLat.error.longitude * 2;
+  return encode(neighborLat, neighborLon, hashString.length);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ngeohash.neighbor_int" id="apidoc.element.ngeohash.neighbor_int">
+        function <span class="apidocSignatureSpan">ngeohash.</span>neighbor_int
+        <span class="apidocSignatureSpan">(hash_int, direction, bitDepth)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">neighbor_int = function (hash_int, direction, bitDepth) {
+    bitDepth = bitDepth || 52;
+    var lonlat = decode_int(hash_int, bitDepth);
+    var neighbor_lat = lonlat.latitude + direction[0] * lonlat.error.latitude * 2;
+    var neighbor_lon = lonlat.longitude + direction[1] * lonlat.error.longitude * 2;
+    return encode_int(neighbor_lat, neighbor_lon, bitDepth);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ngeohash.neighbors" id="apidoc.element.ngeohash.neighbors">
+        function <span class="apidocSignatureSpan">ngeohash.</span>neighbors
+        <span class="apidocSignatureSpan">(hash_string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">neighbors = function (hash_string){
+
+    var hashstringLength = hash_string.length;
+
+    var lonlat = decode(hash_string);
+    var lat = lonlat.latitude;
+    var lon = lonlat.longitude;
+    var latErr = lonlat.error.latitude * 2;
+    var lonErr = lonlat.error.longitude * 2;
+
+    var neighbor_lat,
+        neighbor_lon;
+
+    var neighborHashList = [
+                            encodeNeighbor(1,0),
+                            encodeNeighbor(1,1),
+                            encodeNeighbor(0,1),
+                            encodeNeighbor(-1,1),
+                            encodeNeighbor(-1,0),
+                            encodeNeighbor(-1,-1),
+                            encodeNeighbor(0,-1),
+                            encodeNeighbor(1,-1)
+                            ];
+
+    function encodeNeighbor(neighborLatDir, neighborLonDir){
+        neighbor_lat = lat + neighborLatDir * latErr;
+        neighbor_lon = lon + neighborLonDir * lonErr;
+        return encode(neighbor_lat, neighbor_lon, hashstringLength);
+    }
+
+    return neighborHashList;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ngeohash.neighbors_int" id="apidoc.element.ngeohash.neighbors_int">
+        function <span class="apidocSignatureSpan">ngeohash.</span>neighbors_int
+        <span class="apidocSignatureSpan">(hash_int, bitDepth)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">neighbors_int = function (hash_int, bitDepth){
+
+    bitDepth = bitDepth || 52;
+
+    var lonlat = decode_int(hash_int, bitDepth);
+    var lat = lonlat.latitude;
+    var lon = lonlat.longitude;
+    var latErr = lonlat.error.latitude * 2;
+    var lonErr = lonlat.error.longitude * 2;
+
+    var neighbor_lat,
+        neighbor_lon;
+
+    var neighborHashIntList = [
+                            encodeNeighbor_int(1,0),
+                            encodeNeighbor_int(1,1),
+                            encodeNeighbor_int(0,1),
+                            encodeNeighbor_int(-1,1),
+                            encodeNeighbor_int(-1,0),
+                            encodeNeighbor_int(-1,-1),
+                            encodeNeighbor_int(0,-1),
+                            encodeNeighbor_int(1,-1)
+                            ];
+
+    function encodeNeighbor_int(neighborLatDir, neighborLonDir){
+        neighbor_lat = lat + neighborLatDir * latErr;
+        neighbor_lon = lon + neighborLonDir * lonErr;
+        return encode_int(neighbor_lat, neighbor_lon, bitDepth);
+    }
+
+    return neighborHashIntList;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
